@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src/client",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@services/*": ["services/*"],
+      "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
+      "@assets": ["assets/*"],
+      "@utils": ["utils/index"],
+      "@hooks/*": ["hooks/*"],
+      "@store": ["store/index"],
+      "@config": ["config/index"],
+      "@components/*": ["components/*"]
+    }
+  }
+}

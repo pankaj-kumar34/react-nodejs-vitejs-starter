@@ -1,0 +1,59 @@
+env:
+  browser: true
+  es2021: true
+
+extends:
+  - airbnb
+  - airbnb/hooks
+  - plugin:prettier/recommended
+
+plugins:
+  - unicorn
+
+settings:
+  react:
+    version: detect
+  import/resolver:
+    alias:
+      map:
+        - - '@services'
+          - ./src/client/services
+        - - '@store'
+          - ./src/client/store
+        - - '@assets'
+          - ./src/client/assets
+        - - '@hooks'
+          - ./src/client/hooks
+        - - '@utils'
+          - ./src/client/utils
+        - - '@pages'
+          - ./src/client/pages
+        - - '@routes'
+          - ./src/client/routes
+        - - '@config'
+          - ./src/client/config
+        - - '@components'
+          - ./src/client/components
+        - - '@app'
+          - ./src/client/app
+      extensions:
+        - .js
+        - .jsx
+        - .json
+
+parserOptions:
+  parser: '@babel/eslint-parser'
+  sourceType: module
+  ecmaVersion: latest
+  ecmaFeatures:
+    JSX: true
+
+rules:
+  unicorn/prefer-spread: 2
+  react-hooks/exhaustive-deps: 0
+  unicorn/consistent-destructuring: 2
+  unicorn/filename-case:
+    - 2
+    - case: pascalCase
+      ignore:
+        - "\\.*\\.js$"

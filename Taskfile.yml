@@ -1,0 +1,32 @@
+version: '3'
+
+tasks:
+  preview:
+    cmds:
+      - NODE_ENV='development' ./dist/server/index.js
+
+  build:
+    desc: Build generates production build of client application and build server code
+    cmds:
+      - npm run build
+
+  dev:
+    desc: Dev runs client and server in development mode
+    deps:
+      - run:server
+      - run:client
+
+  run:server:
+    desc: 'Run server compiles and run go server'
+    cmds:
+      - npm run "start:server"
+
+  run:client:
+    desc: 'Run client compiles and run client server'
+    cmds:
+      - npm run "start:client"
+
+  setup-hook:
+    desc: 'Configure pre-commit hook'
+    cmds:
+      - git config --local core.hooksPath .husky
