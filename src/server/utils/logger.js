@@ -1,3 +1,4 @@
+import nconf from 'nconf';
 import log4js from 'log4js';
 import rtracer from 'cls-rtracer';
 
@@ -16,7 +17,7 @@ const logger = log4js.configure({
       },
     },
   },
-  categories: { default: { appenders: ['out'], level: 'info' } },
+  categories: { default: { appenders: ['out'], level: nconf.get('LOG_LEVEL') || 'info' } },
 });
 
 export const getLogger = (filename) => logger.getLogger(filename);

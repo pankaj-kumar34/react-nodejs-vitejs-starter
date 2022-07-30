@@ -4,13 +4,13 @@ import * as handlers from '../handlers';
 const router = express.Router();
 
 // health check
-router.get('/api/health', handlers.getReadiness);
-router.get('/api/healthz', handlers.getLiveness);
+router.get('/api/v1/health', handlers.getReadiness);
+router.get('/api/v1/healthz', handlers.getLiveness);
 
 // calculator
-router.get('/api/calculator/add', handlers.add);
-router.get('/api/calculator/subtract', handlers.subtract);
-router.get('/api/calculator/multiply', handlers.multiply);
-router.get('/api/calculator/divide', handlers.divide);
+router.get('/api/v1/calculator/add', handlers.add);
+router.get('/api/v1/calculator/subtract', handlers.subtract);
+router.get('/api/v1/calculator/multiply', handlers.multiply);
+router.get('/api/v1/calculator/divide', handlers.divide);
 
 export default router;

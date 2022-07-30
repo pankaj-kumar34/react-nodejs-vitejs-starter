@@ -3,11 +3,12 @@ version: '3'
 tasks:
   preview:
     cmds:
-      - NODE_ENV='development' ./dist/server/index.js
+      - node -r dotenv/config ./dist/server/index.js
 
   build:
     desc: Build generates production build of client application and build server code
     cmds:
+      - rm -rf ./dist
       - npm run build
 
   dev:

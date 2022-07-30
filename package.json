@@ -6,7 +6,8 @@
   "scripts": {
     "start:client": "vite",
     "build": "vite build && babel src/server -d dist/server",
-    "start:server": "nodemon --exec node_modules/.bin/babel-node -r dotenv/config src/server/index.js"
+    "start:server": "nodemon --inspect=0.0.0.0:9229 src/server/index.js",
+    "detect-secrets": "git diff --staged --name-only -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "log4js": "^6.6.1",
     "lottie-react": "^2.3.1",
     "morgan": "^1.10.0",
+    "nconf": "^0.12.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

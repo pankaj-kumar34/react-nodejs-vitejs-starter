@@ -1,5 +1,5 @@
-export const catchAsync = (handler) => {
-  return (request, response, next) => {
-    handler(request, response, next).catch(next);
-  };
+const catchAsync = (handler) => (request, response, next) => {
+  handler(request, response, next).catch(next);
 };
+
+export default catchAsync;

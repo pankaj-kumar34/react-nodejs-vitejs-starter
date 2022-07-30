@@ -11,8 +11,8 @@ import { getLogger } from '../utils';
 
 const logger = getLogger('request');
 
-//request logger middleware for express
-export const requestLogger = morgan(':method :url HTTP/:http-version :user-agent', {
+// request logger middleware for express
+export default morgan(':method :url HTTP/:http-version :user-agent', {
   immediate: true,
   stream: {
     write: (message) => {

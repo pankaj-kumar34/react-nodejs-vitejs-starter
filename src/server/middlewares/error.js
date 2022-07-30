@@ -1,4 +1,4 @@
-import createError from 'http-errors';
+import createError, { isHttpError } from 'http-errors';
 import { getLogger } from '../utils';
 
 const logger = getLogger('error');
@@ -11,7 +11,7 @@ const logger = getLogger('error');
  * @returns http error 404
  */
 export const notFoundHandler = (request, response, next) => {
-  //return 404 not found for unknown routes
+  // return 404 not found for unknown routes
   return next(new createError.NotFound('Resource not found'));
 };
 
@@ -24,7 +24,7 @@ export const notFoundHandler = (request, response, next) => {
  * @returns void
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line no-unused-vars
 export const errorHandler = (error, request, response, next) => {
   let status = error.status || 500;
   let statusCode = error.statusCode || 500;

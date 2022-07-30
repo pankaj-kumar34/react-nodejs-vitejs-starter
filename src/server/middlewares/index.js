@@ -1,4 +1,7 @@
-export * from './catchAsync';
+import catchAsync from './catchAsync';
+import requestLogger from './requestLogger';
+import responseLogger from './responseLogger';
+
 export * from './error';
-export * from './requestLogger';
-export * from './responseLogger';
+
+export { catchAsync, requestLogger, responseLogger };
